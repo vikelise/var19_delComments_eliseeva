@@ -2,11 +2,49 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include<vector>
 #include"var19_delComments_eliseeva.h"
 
-int main()
+using namespace std;
+
+int main(const int argc, char** argv)
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "rus");
+
+    //Выдать ошибку, если входной файл не указанив аргументах командной строки
+    if (argc == 1)
+    {
+        cout << "Входной файл не указан." << endl;
+        return 0;
+    }
+
+    //Выдать ошибку, если входной файл невозможно открыть 
+    string path = argv[1];//путь ко входному файлу 
+
+    fstream fin;//объект типа ifstream (содержание входного файла)
+    fin.open(path);
+
+    if (!fin.is_open())
+    {
+        cout << "Входной файл" << path << "Невозможно открыть." << endl;
+        return 0;
+    }
+
+    string line;
+    vector<string>text;
+
+    while (!fin.eof())
+    {
+        getline(fin, line);
+        text.push_back(line);//считывание из файла
+    }
+    fin.close();
+
+    delComments(text);//удаление многострочных комментариев
+    saveResult(text);//запись результатов в файл
+
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

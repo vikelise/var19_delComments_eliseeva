@@ -148,6 +148,43 @@ void findBeginComment(vector<string>& text, int numberRow, int numberPos, int* i
     *count = *count + 1;//счетчик обращений к функции увеличиваем на 1
 }
 
+void findEndComment(vector<string>& text, int numberRow, int numberPos, int* indexRowEnd, int* posEnd)
+{
+    *posEnd = -1;
+    int status = 0;
+    for (int i = numberRow; i < text.size(); i++)
+    {
+        for (int j = 0; j < text[i].size(); j++)
+        {
+            if (text[i][j] == '"' && status == 0)
+                status = 1; //в строковой константе
+            else if (text[i][j] == '"' && status == 1)
+                status = 0;//в тексте
+            if (j != (text[i].size() - 1))
+                if (text[i][j] == '/' && text[i][j + 1] == '/' && status == 0)
+                    status = 2;//в однострочном комментарии
+            if (j != (text[i].size() - 1))//если текущий элемент не последний 
+            {
+                if (text[i][j] == '*' && text[i][j + 1] == '/' && status == 0 && *posEnd == -1)
+                {
+                    if (i != numberRow)
+                    {
+                        *indexRowEnd = i;
+                        *posEnd = j;
+                    }
+                    else if (j != numberPos)
+                    {
+                        *indexRowEnd = i;
+                        *posEnd = j;
+                    }
+                }
+            }
+        }
+        if (status == 2)//если находились в однострочном коммкентарии то при преходе к следуещей строке меняфем сосотояние на в тексте
+            status = 0;
+    }
+}
+
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 

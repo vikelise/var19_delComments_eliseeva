@@ -42,7 +42,7 @@ int main(const int argc, char** argv)
     fin.close();
 
     delComments(text);//удаление многострочных комментариев
-    saveResult(text);//запись результатов в файл
+    saveResult(text, path);//запись результатов в файл
 
 
 }
@@ -183,6 +183,28 @@ void findEndComment(vector<string>& text, int numberRow, int numberPos, int* ind
         if (status == 2)//если находились в однострочном коммкентарии то при преходе к следуещей строке меняфем сосотояние на в тексте
             status = 0;
     }
+}
+
+void saveResult(vector<string>& text, string&path)
+{
+    ofstream out;          // поток для записи
+    out.open(path); // окрываем файл для записи
+    if (out.is_open())
+    {
+        for (int i = 0; i < text.size(); i++)
+            if (text[i].size() == 1)
+            {
+                if (text[i][0] != '0')
+                {
+                    out << text[i] << endl;
+                }
+            }
+            else
+            {
+                out << text[i] << endl;
+            }
+    }
+    out.close();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

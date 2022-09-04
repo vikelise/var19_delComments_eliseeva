@@ -37,6 +37,6 @@ void findEndComment(vector<string>& text, int numberRow, int numberPos, int* ind
 * \Записть результата в файл
 * \param[in] text - текст программы на языке Си
 */
-void saveResult(vector<string>& text);
+void saveResult(vector<string>& text, string & path);
 
 

@@ -47,6 +47,66 @@ int main(const int argc, char** argv)
 
 }
 
+void delComments(vector<string>& text)
+{
+    int indexRowBegin = 0;//индекс строки начала многострочного комментария
+    int indexRowEnd = 0;//индекс строки конца многострочного комментария
+    int posBegin = -1;//позииция начала многострочного комментария в строке
+    int posEnd = -1;//позиция конца многострочного комментария в строке
+    int countFindBegin = 0;//счетчик обращений к функции поиска начала
+    int countFindEnd = 0;//счетчик обращений к функции поиска конца 
+
+    try {
+        do {
+            findBeginComment(text, indexRowBegin, posBegin, &indexRowBegin, &posBegin, &countFindBegin);//поиск начала многострочного комментария 
+            findEndComment(text, indexRowEnd, posEnd, &indexRowEnd, &posEnd, &countFindEnd);//поиск конца многострочного комментария
+            if (posBegin != -1 && posEnd != -1)
+            {
+                if (indexRowBegin != indexRowEnd)
+                {
+                    if (indexRowBegin < indexRowEnd)
+                    {
+                        //удаление наччала многострочного комментария
+                        text[indexRowBegin].erase(text[indexRowBegin].begin() + posBegin, text[indexRowBegin].begin() + text[indexRowBegin].size());
+                        //если после удаления осталась пустая строка, записываем в нее 0
+                        if (text[indexRowBegin].empty() == 1)
+                            text[indexRowBegin].insert(text[indexRowBegin].begin(), '0');
+
+                        //удаление тела многострочного комментария с заменой пустых строк 0
+                        for (int i = indexRowBegin + 1; i < indexRowEnd; i++)
+                        {
+                            text[i].erase(text[i].begin(), text[i].end());
+                            text[i].insert(text[i].begin(), '0');
+                        }
+
+                        //удаление конца многострочного комментария 
+                        text[indexRowEnd].erase(text[indexRowEnd].begin(), text[indexRowEnd].begin() + posEnd + 2);
+                        //если после удаления осталась пустая строка, записываем в нее 0
+                        if (text[indexRowEnd].empty() == 1)
+                            text[indexRowEnd].insert(text[indexRowEnd].begin(), '0');
+                    }
+                    else throw 1;// неправильно обозначенные комментарии
+                }
+                else
+                {
+                    posBegin = posEnd;
+                }
+            }
+            else if (posBegin == -1 && posEnd == -1 && countFindBegin == 1 && countFindEnd==1)
+                throw 2;//нет комментариев многострочных;
+            else if (posBegin == -1 && posEnd != -1 || posBegin != -1 && posEnd == -1)
+                throw 1;// неправильно обозначены комментарии
+
+        } while (posBegin != -1 || posEnd != -1);//повторять пока комментарии находятся 
+    }
+    catch (int& exception)
+    {
+        if (exception == 1)
+            cout << "Некорректно обозначены многострочные комментарии" << endl;
+        else
+            cout << "Нет многострочных комментариев" << endl;
+    }
+}
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"

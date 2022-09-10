@@ -50,13 +50,13 @@ namespace UnitTestfindEndComment
 
 		TEST_METHOD(beginMultilineCommSingleLine)
 		{
-			vector<string>text = { "void main()","{","int a;//int t/*int k;","/*a=10;","a=2;*/","}" };
+			vector<string>text = { "void main()","{","int a;//int t/*int k;","}" };
 			int numberRow = 0;
 			int numberPos = -1;
 			int indexRowEnd = 0;
 			int posEnd = -1;
 			int countFindEnd = 0;
-			int expcountFindEnd = -1;
+			int expcountFindEnd = 1;
 			int expindexRowEnd = 0;
 			int expposEnd = -1;
 
@@ -75,7 +75,7 @@ namespace UnitTestfindEndComment
 			int indexRowEnd = 0;
 			int posEnd = -1;
 			int countFindEnd = 0;
-			int expcountFindEnd = -1;
+			int expcountFindEnd = 1;
 			int expindexRowEnd = 0;
 			int expposEnd = -1;
 

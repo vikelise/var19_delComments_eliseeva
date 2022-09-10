@@ -13,7 +13,7 @@ namespace UnitTestdelComments
 		TEST_METHOD(beginMultilineCommSingleLine)
 		{
 			vector<string>text = { "void main()","{","int a;//int t/*int k;","/*a=10;","a=2;*/","}" };
-			vector<string>exptext = { "void main()", "{" ,"int a;//int t/*int k;","}" };
+			vector<string>exptext = { "void main()", "{" ,"int a;//int t/*int k;", "0","0","}" };
 			delComments(text);
 			int real_value;
 			int expvalue = 0;
@@ -27,7 +27,7 @@ namespace UnitTestdelComments
 		TEST_METHOD(endMultilineCommSingleLine)
 		{
 			vector<string>text = { "void main()","{","int a;//int t*/int k;","/*a=10;","a=2;*/","}" };
-			vector<string>exptext = { "void main()", "{" ,"int a;//int t/*int k;","}" };
+			vector<string>exptext = { "void main()","{","int a;//int t*/int k;","0","0","}" };
 			delComments(text);
 			int real_value;
 			int expvalue = 0;
@@ -41,7 +41,7 @@ namespace UnitTestdelComments
 		TEST_METHOD(singleLineCommInMultiline)
 		{
 			vector<string>text = { "void main()","{","int a;","/*a=10;","//int k;","a=2;*/","}" };
-			vector<string>exptext = { "void main()", "{" ,"int a;","}" };
+			vector<string>exptext = { "void main()", "{" ,"int a;","0","0","0","}" };
 			delComments(text);
 			int real_value;
 			int expvalue = 0;

@@ -148,7 +148,7 @@ void findBeginComment(vector<string>& text, int numberRow, int numberPos, int* i
     *count = *count + 1;//счетчик обращений к функции увеличиваем на 1
 }
 
-void findEndComment(vector<string>& text, int numberRow, int numberPos, int* indexRowEnd, int* posEnd)
+void findEndComment(vector<string>& text, int numberRow, int numberPos, int* indexRowEnd, int* posEnd, int* count)
 {
     *posEnd = -1;
     int status = 0;
@@ -183,6 +183,7 @@ void findEndComment(vector<string>& text, int numberRow, int numberPos, int* ind
         if (status == 2)//если находились в однострочном коммкентарии то при преходе к следуещей строке меняфем сосотояние на в тексте
             status = 0;
     }
+    *count = *count + 1;//счетчик обращений к функции увеличиваем на 1
 }
 
 void saveResult(vector<string>& text, string&path)

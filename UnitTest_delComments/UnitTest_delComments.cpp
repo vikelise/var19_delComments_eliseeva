@@ -15,7 +15,13 @@ namespace UnitTestdelComments
 			vector<string>text = { "void main()","{","int a;//int t/*int k;","/*a=10;","a=2;*/","}" };
 			vector<string>exptext = { "void main()", "{" ,"int a;//int t/*int k;","}" };
 			delComments(text);
-			Assert::AreEqual( exptext, text);
+			int real_value;
+			int expvalue = 0;
+			if (exptext == text)
+				real_value = 0;
+			else
+				real_value = 1;
+			Assert::AreEqual(expvalue, real_value);
 		}
 
 		TEST_METHOD(endMultilineCommSingleLine)
@@ -23,7 +29,13 @@ namespace UnitTestdelComments
 			vector<string>text = { "void main()","{","int a;//int t*/int k;","/*a=10;","a=2;*/","}" };
 			vector<string>exptext = { "void main()", "{" ,"int a;//int t/*int k;","}" };
 			delComments(text);
-			Assert::AreEqual(exptext, text);
+			int real_value;
+			int expvalue = 0;
+			if (exptext == text)
+				real_value = 0;
+			else
+				real_value = 1;
+			Assert::AreEqual(expvalue, real_value);
 		}
 
 		TEST_METHOD(singleLineCommInMultiline)
@@ -31,7 +43,13 @@ namespace UnitTestdelComments
 			vector<string>text = { "void main()","{","int a;","/*a=10;","//int k;","a=2;*/","}" };
 			vector<string>exptext = { "void main()", "{" ,"int a;","}" };
 			delComments(text);
-			Assert::AreEqual(exptext, text);
+			int real_value;
+			int expvalue = 0;
+			if (exptext == text)
+				real_value = 0;
+			else
+				real_value = 1;
+			Assert::AreEqual(expvalue, real_value);
 		}
 
 		TEST_METHOD(multilineCommInSingleLine)
@@ -39,7 +57,13 @@ namespace UnitTestdelComments
 			vector<string>text = { "void main()","{","int a;","//int k;/*90*/","}" };
 			vector<string>exptext = { "void main()", "{" ,"int a;","//int k;/*90*/","}" };
 			delComments(text);
-			Assert::AreEqual(exptext, text);
+			int real_value;
+			int expvalue = 0;
+			if (exptext == text)
+				real_value = 0;
+			else
+				real_value = 1;
+			Assert::AreEqual(expvalue, real_value);
 		}
 
 		TEST_METHOD(multilineCommInConst)
@@ -47,7 +71,13 @@ namespace UnitTestdelComments
 			vector<string>text = { "void main()","{","char a= '/*12;","6890 * / '","a = 10;","}" };
 			vector<string>exptext = { "void main()", "{" ,"char a= '/*12;","6890 * / '","a = 10;","}" };
 			delComments(text);
-			Assert::AreEqual(exptext, text);
+			int real_value;
+			int expvalue = 0;
+			if (exptext == text)
+				real_value = 0;
+			else
+				real_value = 1;
+			Assert::AreEqual(expvalue, real_value);
 		}
 		
 		TEST_METHOD(multilineCommLikeSingleLineInConst)
@@ -55,7 +85,13 @@ namespace UnitTestdelComments
 			vector<string>text = { "void main()","{","char a= '/*12;*/ '","a = 10;","}" };
 			vector<string>exptext = { "void main()", "{" ,"char a= '/*12;*/ '","a = 10;","}" };
 			delComments(text);
-			Assert::AreEqual(exptext, text);
+			int real_value;
+			int expvalue = 0;
+			if (exptext == text)
+				real_value = 0;
+			else
+				real_value = 1;
+			Assert::AreEqual(expvalue, real_value);
 		}
 	};
 }

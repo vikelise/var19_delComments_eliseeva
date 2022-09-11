@@ -67,23 +67,6 @@ namespace UnitTestfindEndComment
 			Assert::AreEqual(expposEnd, posEnd);
 		}
 
-		TEST_METHOD(beginMultilineCommInConst)
-		{
-			vector<string>text = { "void main()","{","char a= '/*12;","6890 * / '","a = 10;","}" };
-			int numberRow = 0;
-			int numberPos = -1;
-			int indexRowEnd = 0;
-			int posEnd = -1;
-			int countFindEnd = 0;
-			int expcountFindEnd = 1;
-			int expindexRowEnd = 0;
-			int expposEnd = -1;
-
-			findEndComment(text, numberRow, numberPos, &indexRowEnd, &posEnd, &countFindEnd);
-
-			Assert::AreEqual(expcountFindEnd, countFindEnd);
-			Assert::AreEqual(expindexRowEnd, indexRowEnd);
-			Assert::AreEqual(expposEnd, posEnd);
-		}
+		
 	};
 }

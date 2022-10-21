@@ -1,0 +1,76 @@
+\hypertarget{var19__del_comments__eliseeva_8h}{}\section{var19\+\_\+del\+Comments\+\_\+eliseeva/var19\+\_\+del\+Comments\+\_\+eliseeva/var19\+\_\+del\+Comments\+\_\+eliseeva.h File Reference}
+\label{var19__del_comments__eliseeva_8h}\index{var19\+\_\+del\+Comments\+\_\+eliseeva/var19\+\_\+del\+Comments\+\_\+eliseeva/var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva/var19\+\_\+del\+Comments\+\_\+eliseeva/var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{var19__del_comments__eliseeva_8h_a9cc10b369b0eb6132c69a6e014c9729b}{del\+Comments}} (vector$<$ string $>$ \&text)
+\item 
+void \mbox{\hyperlink{var19__del_comments__eliseeva_8h_a9bd1de8f56539dbbd0949cb0df731eef}{find\+Begin\+Comment}} (vector$<$ string $>$ \&text, int number\+Row, int number\+Pos, int $\ast$index\+Row\+Begin, int $\ast$pos\+Begin, int $\ast$count\+Find\+Begin)
+\item 
+void \mbox{\hyperlink{var19__del_comments__eliseeva_8h_a11a1c899b54c66a0f51b878d7a4ad255}{find\+End\+Comment}} (vector$<$ string $>$ \&text, int number\+Row, int number\+Pos, int $\ast$index\+Row\+End, int $\ast$pos\+End, int $\ast$count\+Find\+End)
+\item 
+void \mbox{\hyperlink{var19__del_comments__eliseeva_8h_a31fb129c36c18c12da9eda0b1626d327}{save\+Result}} (vector$<$ string $>$ \&text, string \&path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{var19__del_comments__eliseeva_8h_a9cc10b369b0eb6132c69a6e014c9729b}\label{var19__del_comments__eliseeva_8h_a9cc10b369b0eb6132c69a6e014c9729b}} 
+\index{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}!del\+Comments@{del\+Comments}}
+\index{del\+Comments@{del\+Comments}!var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}}
+\subsubsection{\texorpdfstring{del\+Comments()}{delComments()}}
+{\footnotesize\ttfamily void del\+Comments (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{text }\end{DoxyParamCaption})}
+
+Удаление многострочных комментариев в тексте программы на языке Си 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{var19__del_comments__eliseeva_8h_a9bd1de8f56539dbbd0949cb0df731eef}\label{var19__del_comments__eliseeva_8h_a9bd1de8f56539dbbd0949cb0df731eef}} 
+\index{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}!find\+Begin\+Comment@{find\+Begin\+Comment}}
+\index{find\+Begin\+Comment@{find\+Begin\+Comment}!var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}}
+\subsubsection{\texorpdfstring{find\+Begin\+Comment()}{findBeginComment()}}
+{\footnotesize\ttfamily void find\+Begin\+Comment (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{text,  }\item[{int}]{number\+Row,  }\item[{int}]{number\+Pos,  }\item[{int $\ast$}]{index\+Row\+Begin,  }\item[{int $\ast$}]{pos\+Begin,  }\item[{int $\ast$}]{count\+Find\+Begin }\end{DoxyParamCaption})}
+
+Нахождение начала многострочного комментария 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em text} & -\/ текст программы на языке Си \\
+\hline
+\mbox{\tt in}  & {\em number\+Row} & -\/ номер строки, с которой начинается поиск \\
+\hline
+\mbox{\tt in}  & {\em number\+Pos} & -\/ позиция начала многострочного комментария, который уже найден, в строке \\
+\hline
+ & {\em \mbox{[}in} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{var19__del_comments__eliseeva_8h_a11a1c899b54c66a0f51b878d7a4ad255}\label{var19__del_comments__eliseeva_8h_a11a1c899b54c66a0f51b878d7a4ad255}} 
+\index{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}!find\+End\+Comment@{find\+End\+Comment}}
+\index{find\+End\+Comment@{find\+End\+Comment}!var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}}
+\subsubsection{\texorpdfstring{find\+End\+Comment()}{findEndComment()}}
+{\footnotesize\ttfamily void find\+End\+Comment (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{text,  }\item[{int}]{number\+Row,  }\item[{int}]{number\+Pos,  }\item[{int $\ast$}]{index\+Row\+End,  }\item[{int $\ast$}]{pos\+End,  }\item[{int $\ast$}]{count\+Find\+End }\end{DoxyParamCaption})}
+
+Нахождение конца многострочного комментария 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em text} & -\/ текст программы на языке Си \\
+\hline
+\mbox{\tt in}  & {\em number\+Row} & -\/ номер строки, с которой начинается поиск \\
+\hline
+\mbox{\tt in}  & {\em number\+Pos} & -\/ позиция конца многострочного комментария, который уже найден, в строке \\
+\hline
+ & {\em \mbox{[}in} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{var19__del_comments__eliseeva_8h_a31fb129c36c18c12da9eda0b1626d327}\label{var19__del_comments__eliseeva_8h_a31fb129c36c18c12da9eda0b1626d327}} 
+\index{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}!save\+Result@{save\+Result}}
+\index{save\+Result@{save\+Result}!var19\+\_\+del\+Comments\+\_\+eliseeva.\+h@{var19\+\_\+del\+Comments\+\_\+eliseeva.\+h}}
+\subsubsection{\texorpdfstring{save\+Result()}{saveResult()}}
+{\footnotesize\ttfamily void save\+Result (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{text,  }\item[{string \&}]{path }\end{DoxyParamCaption})}
+
+Записть результата в файл 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em text} & -\/ текст программы на языке Си \\
+\hline
+\mbox{\tt in}  & {\em path} & -\/ путь к файлу для записи результатов \\
+\hline
+\end{DoxyParams}

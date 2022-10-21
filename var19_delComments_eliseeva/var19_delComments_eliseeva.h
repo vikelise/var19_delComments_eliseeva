@@ -1,18 +1,20 @@
 #pragma once
+
 #include <string>
 #include<vector>
+/**
+namespace std
+\brief Пространство имен std
+*/
 using namespace std;
 
 
-/*!
-* \Удаление многострочных комментариев в тексте программы на языке Си
+/*! Удаление многострочных комментариев в тексте программы на языке Си
 * \param[in\out] text - текст программы на языке Си
-* \throw - (Выбрасывает исключения в случае ошибок в исходном тексте)
 */
 void delComments(vector<string>& text);
 
-/*!
-* \Нахождение начала многострочного комментария
+/*! Нахождение начала многострочного комментария
 * \param[in] text - текст программы на языке Си
 * \param[in] numberRow - номер строки, с которой начинается поиск
 * \param[in] numberPos - позиция начала многострочного комментария, который уже найден, в строке
@@ -22,8 +24,7 @@ void delComments(vector<string>& text);
 */
 void findBeginComment(vector<string>& text, int numberRow, int numberPos, int* indexRowBegin, int* posBegin, int* countFindBegin);
 
-/*!
-* \Нахождение конца многострочного комментария
+/*! Нахождение конца многострочного комментария
 * \param[in] text - текст программы на языке Си
 * \param[in] numberRow - номер строки, с которой начинается поиск
 * \param[in] numberPos - позиция конца многострочного комментария, который уже найден, в строке
@@ -33,9 +34,9 @@ void findBeginComment(vector<string>& text, int numberRow, int numberPos, int* i
 */
 void findEndComment(vector<string>& text, int numberRow, int numberPos, int* indexRowEnd, int* posEnd, int* countFindEnd);
 
-/*!
-* \Записть результата в файл
+/*! Записть результата в файл
 * \param[in] text - текст программы на языке Си
+* \param[in] path - путь к файлу для записи результатов
 */
 void saveResult(vector<string>& text, string & path);
 

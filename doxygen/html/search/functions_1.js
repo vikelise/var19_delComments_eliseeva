@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['findbegincomment',['findBeginComment',['../var19__del_comments__eliseeva_8cpp.html#abe874d5a5c0bc0b101e9f5a914b28c3c',1,'findBeginComment(vector&lt; string &gt; &amp;text, int numberRow, int numberPos, int *indexRowBegin, int *posBegin, int *count):&#160;var19_delComments_eliseeva.cpp'],['../var19__del_comments__eliseeva_8h.html#a9bd1de8f56539dbbd0949cb0df731eef',1,'findBeginComment(vector&lt; string &gt; &amp;text, int numberRow, int numberPos, int *indexRowBegin, int *posBegin, int *countFindBegin):&#160;var19_delComments_eliseeva.cpp']]],
+  ['findendcomment',['findEndComment',['../var19__del_comments__eliseeva_8cpp.html#a252f2bad35e986c87afb6e9bf16b586b',1,'findEndComment(vector&lt; string &gt; &amp;text, int numberRow, int numberPos, int *indexRowEnd, int *posEnd, int *count):&#160;var19_delComments_eliseeva.cpp'],['../var19__del_comments__eliseeva_8h.html#a11a1c899b54c66a0f51b878d7a4ad255',1,'findEndComment(vector&lt; string &gt; &amp;text, int numberRow, int numberPos, int *indexRowEnd, int *posEnd, int *countFindEnd):&#160;var19_delComments_eliseeva.cpp']]]
+];
